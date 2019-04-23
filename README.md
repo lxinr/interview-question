@@ -20,7 +20,7 @@
 
 [8. js实现自定义事件](https://github.com/lxinr/interview-question/issues/11)
 
-[9. js 常用运算符的优先级](https://github.com/lxinr/interview-question/issues/12)
+[9. js常用运算符的优先级](https://github.com/lxinr/interview-question/issues/12)
 
 #### 计算机网络基础
 
