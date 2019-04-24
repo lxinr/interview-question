@@ -8,6 +8,10 @@
 
 [2. 块级格式化上下文 BFC原理](https://github.com/lxinr/interview-question/issues/14)
 
+[3. CSS中常见的继承属性](https://github.com/lxinr/interview-question/issues/19)
+
+[4. 分析比较 display: none、opacity: 0、visibility: hidden 的优劣](https://github.com/lxinr/interview-question/issues/20)
+
 #### js基础
 
 [1. 实现 (5).add(3).minus(2)，例： 5 + 3 - 2，结果为 6](https://github.com/lxinr/interview-question/issues/1)
