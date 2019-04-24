@@ -28,6 +28,12 @@
 
 [9. js常用运算符的优先级](https://github.com/lxinr/interview-question/issues/12)
 
+[10. 箭头函数和普通函数之间的区别](https://github.com/lxinr/interview-question/issues/15)
+
+[11. 闭包及闭包的意义](https://github.com/lxinr/interview-question/issues/16)
+
+[12. 什么是IIFE](https://github.com/lxinr/interview-question/issues/17)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
