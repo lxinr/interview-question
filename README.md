@@ -55,3 +55,7 @@
 [1. webpack中plugin和loader的区别](https://github.com/lxinr/interview-question/issues/21)
 
 [2. webpack中常用的loader和plugin](https://github.com/lxinr/interview-question/issues/22)
+
+#### 算法基础
+
+[1. 实现洗牌算法](https://github.com/lxinr/interview-question/issues/24)
