@@ -42,6 +42,10 @@
 
 [14. 简单实现几种排序算法](https://github.com/lxinr/interview-question/issues/23)
 
+[15. Proxy的简单使用](https://github.com/lxinr/interview-question/issues/26)
+
+[16. 如何把一个字符串的大小写取反（大写变小写小写变大写）](https://github.com/lxinr/interview-question/issues/27)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
