@@ -52,6 +52,10 @@
 
 [19. Object.is和===的区别](https://github.com/lxinr/interview-question/issues/34)
 
+[20. this的理解](https://github.com/lxinr/interview-question/issues/35)
+
+[21. 实现一个new](https://github.com/lxinr/interview-question/issues/36)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
