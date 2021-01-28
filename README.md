@@ -48,6 +48,8 @@
 
 [17. null是对象吗？为什么](https://github.com/lxinr/interview-question/issues/32)
 
+[18. typeof和instanceof的原理及区别](https://github.com/lxinr/interview-question/issues/33)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
