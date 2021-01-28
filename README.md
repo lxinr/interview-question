@@ -50,6 +50,8 @@
 
 [18. typeof和instanceof的原理及区别](https://github.com/lxinr/interview-question/issues/33)
 
+[19. Object.is和===的区别](https://github.com/lxinr/interview-question/issues/34)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
