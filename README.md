@@ -56,6 +56,8 @@
 
 [21. 实现一个new](https://github.com/lxinr/interview-question/issues/36)
 
+[23. 模拟实现call、apply](https://github.com/lxinr/interview-question/issues/37)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
