@@ -62,6 +62,8 @@
 
 [25. JavaScript内存机制](https://github.com/lxinr/interview-question/issues/38)
 
+[26. v8引擎执行js代码的过程简析](https://github.com/lxinr/interview-question/issues/40)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
