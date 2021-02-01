@@ -64,6 +64,8 @@
 
 [26. v8引擎执行js代码的过程简析](https://github.com/lxinr/interview-question/issues/40)
 
+[27. 数组去重方法实现](https://github.com/lxinr/interview-question/issues/41)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
