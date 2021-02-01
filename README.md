@@ -66,6 +66,8 @@
 
 [27. 数组去重方法实现](https://github.com/lxinr/interview-question/issues/41)
 
+[28. 实现数组展平](https://github.com/lxinr/interview-question/issues/42)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
