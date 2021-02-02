@@ -68,6 +68,8 @@
 
 [28. 实现数组展平](https://github.com/lxinr/interview-question/issues/42)
 
+[29. 实现Event(event bus)](https://github.com/lxinr/interview-question/issues/43)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
