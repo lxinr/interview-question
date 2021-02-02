@@ -70,6 +70,8 @@
 
 [29. 实现Event(event bus)](https://github.com/lxinr/interview-question/issues/43)
 
+[30. 何为事件委托](https://github.com/lxinr/interview-question/issues/44)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
