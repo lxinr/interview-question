@@ -2,7 +2,7 @@
 
 ### 题目列表
 
-#### css基础
+#### CSS
 
 [1. 选择器及样式优先级](https://github.com/lxinr/interview-question/issues/13)
 
@@ -12,7 +12,7 @@
 
 [4. 分析比较 display: none、opacity: 0、visibility: hidden 的优劣](https://github.com/lxinr/interview-question/issues/20)
 
-#### js基础
+#### JavaScript
 
 [1. 实现 (5).add(3).minus(2)，例： 5 + 3 - 2，结果为 6](https://github.com/lxinr/interview-question/issues/1)
 
@@ -71,6 +71,8 @@
 [29. 实现Event(event bus)](https://github.com/lxinr/interview-question/issues/43)
 
 [30. 何为事件委托](https://github.com/lxinr/interview-question/issues/44)
+
+[31. JS数组的高阶函数的概念，以及有哪些常用的原生高阶函数](https://github.com/lxinr/interview-question/issues/45)
 
 #### 计算机网络基础
 
