@@ -76,6 +76,8 @@
 
 [32. V8引擎的垃圾回收](https://github.com/lxinr/interview-question/issues/46)
 
+[33. Object.create()](https://github.com/lxinr/interview-question/issues/47)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
