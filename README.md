@@ -80,6 +80,8 @@
 
 [34. EventLoop的理解，浏览器环境和Node环境的区别](https://github.com/lxinr/interview-question/issues/48)
 
+[35. 生成器(Generator)的理解](https://github.com/lxinr/interview-question/issues/49)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
