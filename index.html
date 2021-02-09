@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div class="proxy">
+  <p id="info-wrap"></p>
+  <button id="btn">点击增加</button>
+</div>
+</body>
+<script type="module">
+  import MyPromise from './module/promise.mjs'
+  import './module/index.mjs'
+
+  const promise = new MyPromise()
+  console.log('my----', promise)
+  promise.then(v => {
+    console.log('v---', v)
+    return 4
+  }).then(b => {
+    console.log('b-----', b)
+  })
+
+  console.log('window----', window)
+
+  window.addEventListener('load', (event) => {
+    const params = {
+      count: 0
+    }
+
+    const btn = document.getElementById('btn')
+
+    btn.addEventListener('click', function() {
+      params.count += 1
+
+      console.log('params.count-', params.count)
+    })
+
+    let _count = params.count;
+
+    Object.defineProperty(params, 'count', {
+      enumerable : true,
+      configurable: true,
+      get() {
+        return _count + 2
+      },
+      set(nv) {
+        _count = nv
+        console.log('nv----', nv)
+      }
+    })
+  })
+</script>
+</html>
