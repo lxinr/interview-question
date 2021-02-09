@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hash路由</title>
+  <style>
+    #app {
+      margin: 15px 0;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #696969;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#page1">page1</a>
+    <a href="#page2">page2</a>
+    <a href="#page3">page3</a>
+    <a href="#page4">page4</a>
+  </header>
+  <section id="app">
+
+  </section>
+  <script type="module">
+    import HashRouter from './hashRouter/router.mjs'
+    
+    window.addEventListener('load', () => {
+      const router = new HashRouter()
+      const app = document.getElementById('app')
+      const routes = [
+        { path: 'page1', cb: () =>  app.innerHTML = '这是page1'},
+        { path: 'page2', cb: () =>  app.innerHTML = '这是page2'},
+        { path: 'page3', cb: () =>  app.innerHTML = '这是page3'}
+      ]
+
+      routes.forEach(item => {
+        router.register(item.path, item.cb)
+      })
+
+      router.registerIndex(() => app.innerHTML = '这是首页呀呀呀')
+      router.registerNotFound(() => app.innerHTML = '找不到你要的页面')
+    })
+  </script>
+</body>
+</html>
