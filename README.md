@@ -82,6 +82,8 @@
 
 [35. 生成器(Generator)的理解](https://github.com/lxinr/interview-question/issues/49)
 
+[36. 前端路由的实现原理](https://github.com/lxinr/interview-question/issues/50)
+
 #### 计算机网络基础
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
