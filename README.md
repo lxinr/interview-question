@@ -104,6 +104,10 @@
 
 [2. webpack中常用的loader和plugin](https://github.com/lxinr/interview-question/issues/22)
 
+#### 前端安全
+
+[1. 简述前端安全](https://github.com/lxinr/interview-question/issues/54)
+
 #### 框架基础
 
 [1. 对于MVVM的理解](https://github.com/lxinr/interview-question/issues/25)
