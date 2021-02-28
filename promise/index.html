@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise</title>
+</head>
+<body>
+  <script type="module">
+    // const promise = new Promise(resolve => {
+    //   resolve('vvvv')
+    // })
+    // console.log('par------', promise)
+
+    // promise.then(v => {
+    //   console.log('v------', v)
+    // })
+    // promise.then(v => {
+    //   console.log('v--||||----', v)
+    // })
+
+    // function LazyMan(val) {
+    //   this.queues = []
+    //   const queue = () => {
+    //     console.log('这是 ' + val)
+    //     this.next()
+    //   }
+    //   this.queues.push(queue)
+
+    //   setTimeout(() => {
+    //     this.next()
+    //   })
+
+    //   return this
+    // }
+
+    // LazyMan.prototype.next = function () {
+    //   console.log('next----', next)
+    //   // const queue = this.queues.shift()
+    //   // queue && queue()
+    // }
+
+    // LazyMan.prototype.eat = function (val) {
+    //   const queue = () => {
+    //     console.log('想吃 ' + val)
+    //     this.next()
+    //   }
+    //   this.queues.push(queue)
+    //   return this
+    // }
+
+    // LazyMan('流了颗星').eat('哈密瓜')
+
+    // const Macinfo = function() {
+    //   function Macinfo(info) {
+    //     if(!(this instanceof Macinfo)) {
+    //       throw new TypeError("不允许直接使用")
+    //     }
+
+    //     this.info = info
+    //   }
+
+    //   return Macinfo
+    // }()
+
+    // console.log('Mac----', Macinfo('fhhfhf'))
+
+    // const m = new Macinfo('dddd')
+    // console.log('b----', m)
+
+
+    // function Msg(params) {
+    //   if(!(this instanceof Msg)) {
+    //     throw new TypeError("不允许直接使用")
+    //   }
+    //   this.info = params
+    // }
+
+    // console.log('mds-----', Msg('痛痛痛'))
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    var Msg = function Msg() {
+      "use strict";
+
+      _classCallCheck(this, Msg);
+    };
+
+    console.log('Mag----', Msg.prototype.constructor === Msg)
+
+
+
+  </script>
+</body>
+</html>

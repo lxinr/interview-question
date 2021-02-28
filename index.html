@@ -14,6 +14,9 @@
 <script type="module">
   import MyPromise from './module/promise.mjs'
   import './module/index.mjs'
+  import { cloneDeep } from './module/cloneDeep.mjs'
+  import clone from './module/clone.mjs'
+  import { urlParse } from './utils/index.js'
 
   const promise = new MyPromise()
   console.log('my----', promise)
@@ -53,5 +56,58 @@
       }
     })
   })
+
+  const testInfo = {
+    f: 3,
+    msg: function () {
+      return '哈哈哈哈'
+    },
+    v: '34523423',
+    set: new Set(),
+    res: {
+      data: 4567
+    }
+  }
+
+  const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+          child: 'child'
+      },
+      empty: null,
+      nan: NaN,
+      un: -NaN,
+      field4: [2, 4, 8],
+      f: { f: { f: { f: { f: { f: { f: { f: { f: { f: { f: { f: {} } } } } } } } } } } },
+      testInfo: { testInfo: { testInfo: { testInfo } } },
+      bool: new Boolean(true),
+      num: new Number(2),
+      str: new String(2),
+      symbol: Object(Symbol(1)),
+      date: new Date(),
+      reg: /\d+/,
+      error: new Error(),
+      func1: () => {
+          console.log('code秘密花园');
+      },
+      func2: function (a, b) {
+          return a + b;
+      }
+  };
+
+  target.target = target;
+
+  console.time('cloneDeep');
+  const result = cloneDeep(target);
+  console.log('result---', result, clone(target))
+  console.timeEnd('cloneDeep');
+
+  const info = new Object({ v: target })
+
+  // info.v = target
+
+  console.log('urlParse----', urlParse('https://www.xx.com?c=23232&e=523423'))
+
 </script>
 </html>
