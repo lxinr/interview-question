@@ -119,3 +119,7 @@
 #### 算法基础
 
 [1. 实现洗牌算法](https://github.com/lxinr/interview-question/issues/24)
+
+#### 面试题
+
+[1. 经典面试题: 实现一个LazyMan](https://github.com/lxinr/interview-question/issues/58)
