@@ -92,13 +92,15 @@
 
 [39. 深浅拷贝的实现](https://github.com/lxinr/interview-question/issues/55)
 
-#### 计算机网络基础
+#### 浏览器及网络
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
 
 [2. 简述TCP的三次握手、四次挥手](https://github.com/lxinr/interview-question/issues/6)
 
 [3. 常见的HTTP请求报文头和响应报文头属性](https://github.com/lxinr/interview-question/issues/7)
+
+[4. CDN的实现原理](https://github.com/lxinr/interview-question/issues/56)
 
 #### webpack基础
 
@@ -117,3 +119,7 @@
 #### 算法基础
 
 [1. 实现洗牌算法](https://github.com/lxinr/interview-question/issues/24)
+
+#### 面试题
+
+[1. 经典面试题: 实现一个LazyMan](https://github.com/lxinr/interview-question/issues/58)
