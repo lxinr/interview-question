@@ -60,18 +60,35 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor
 }
 
-var Msg = (function () {
+function _inherits(subClass, superClass) {
+  // 判断父类是否是符合要求的
+  if (typeof superClass !== 'function' && superClass !== null) {
+    throw new TypeError('Super expression must either be null or a function')
+  }
+  // 让子类继承父类的公有方法
+  // Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__
+  // 大致为 
+  // subClass.prototype = Object.create(superClass.prototype）
+  // subClass.prototype。constructor = subClass
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: { value: subClass, writable: true, configurable: true },
+  })
+  // 让子类继承父类的静态方法，即subClass.__proto__ = superClass
+  if (superClass) Object.setPrototypeOf(subClass, superClass)
+}
+
+var Parent = (function () {
   'use strict' // 类声明和类表达式的主体都执行在严格模式下'
-  function Msg(options) {
-    // 判断当前this是否属于构造函数Msg的一个实例
-    _classCallCheck(this, Msg)
+  function Parent(options) {
+    // 判断当前this是否属于构造函数Parent的一个实例
+    _classCallCheck(this, Parent)
 
     this.name = options.name || ''
     this.age = options.age || 20
   }
 
   _createClass(
-    Msg,
+    Parent,
     [
       {
         key: 'find',
@@ -96,47 +113,30 @@ var Msg = (function () {
     ]
   )
 
-  return Msg
+  return Parent
 })()
 
-// class Msg {
-//   // name = '';
-//   // age = 24;
-//   constructor(options) {
-//     this.name = options.name || ''
-//     this.age = options.age || 24
-//   }
+const Child = function(Parent) {
+  _inherits(Child, Parent) // 继承父类方法
 
-//   get info() {
-//     return `name is ${this.name}，age is ${this.age}`
-//   }
+  function Child(options) {
+    _classCallCheck(this, Child)
+    const val = Parent.call(this, options)
+    // 如果父级返回了一个对象类型，则把this指向为这个返回的对象
+    if(typeof val === 'object') return val
+    return this
+  }
+  return Child
+}(Parent)
 
-//   static eat() {
-//     return `${this.name} eat apple`
-//   }
+const parent = new Parent({ name: '流了颗星' })
 
-//   find(v) {
-//     delete this.age
-//     return `${v}'慢慢慢慢慢慢'`
-//   }
-// }
+console.log(parent)
+console.log(parent.find('666')) // 666慢慢慢慢慢慢
+console.log(parent.info) // name is 流了颗星，age is 20
+console.log(Parent.eat()) // Parent eat apple
 
-console.log('msg---') // msg--- Msg {}
-const msg = new Msg({ name: '流了颗星' })
-
-// console.log(msg)
-console.log(msg.find('666')) // 666慢慢慢慢慢慢
-console.log(msg.info) // name is 流了颗星，age is 20
-console.log(Msg.eat()) // Msg eat apple
+const c = new Child({ name: '六六六' })
+console.log('c----', c.info) // name is 六六六，age is 20
 
 export default 'dsds'
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== 'function' && superClass !== null) {
-    throw new TypeError('Super expression must either be null or a function')
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: { value: subClass, writable: true, configurable: true },
-  })
-  if (superClass) _setPrototypeOf(subClass, superClass)
-}
