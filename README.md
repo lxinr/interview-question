@@ -126,6 +126,8 @@
 
 [1. 经典面试题: 实现一个LazyMan](https://github.com/lxinr/interview-question/issues/58)
 
+[2. 实现Event(event bus)](https://github.com/lxinr/interview-question/issues/60)
+
 #### Vue
 
 [1. vue中父子组件的加载顺序](https://github.com/lxinr/interview-question/issues/59)
