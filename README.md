@@ -92,6 +92,8 @@
 
 [39. 深浅拷贝的实现](https://github.com/lxinr/interview-question/issues/55)
 
+[40. class(类)的实现](https://github.com/lxinr/interview-question/issues/57)
+
 #### 浏览器及网络
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
