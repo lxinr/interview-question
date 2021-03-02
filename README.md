@@ -106,6 +106,8 @@
 
 [4. CDN的实现原理](https://github.com/lxinr/interview-question/issues/56)
 
+[5. 从输入url到页面展示的过程](https://github.com/lxinr/interview-question/issues/62)
+
 #### webpack基础
 
 [1. webpack中plugin和loader的区别](https://github.com/lxinr/interview-question/issues/21)
