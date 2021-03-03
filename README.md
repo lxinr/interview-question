@@ -137,3 +137,5 @@
 [1. vue中父子组件的加载顺序](https://github.com/lxinr/interview-question/issues/59)
 
 [2. 虚拟DOM的理解](https://github.com/lxinr/interview-question/issues/63)
+
+[3. diff算法简析](https://github.com/lxinr/interview-question/issues/64)
