@@ -108,6 +108,8 @@
 
 [5. 从输入url到页面展示的过程](https://github.com/lxinr/interview-question/issues/62)
 
+[6. HTTP1.1 如何解决 HTTP 的队头阻塞问题](https://github.com/lxinr/interview-question/issues/66)
+
 #### 前端工程化
 
 [1. webpack中plugin和loader的区别](https://github.com/lxinr/interview-question/issues/21)
