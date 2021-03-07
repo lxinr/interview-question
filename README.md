@@ -14,6 +14,8 @@
 
 [5. 层叠上下文](https://github.com/lxinr/interview-question/issues/51)
 
+[6. 对flex的理解](https://github.com/lxinr/interview-question/issues/67)
+
 #### JavaScript
 
 [1. 实现 (5).add(3).minus(2)，例： 5 + 3 - 2，结果为 6](https://github.com/lxinr/interview-question/issues/1)
