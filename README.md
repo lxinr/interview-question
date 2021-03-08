@@ -122,6 +122,8 @@
 
 [3. 前端性能优化](https://github.com/lxinr/interview-question/issues/65)
 
+[4. 组件设计原则](https://github.com/lxinr/interview-question/issues/69)
+
 #### 前端安全
 
 [1. 简述前端安全](https://github.com/lxinr/interview-question/issues/54)
