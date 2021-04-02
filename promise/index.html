@@ -1,96 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promise</title>
-</head>
-<body>
-  <script type="module">
-    // const promise = new Promise(resolve => {
-    //   resolve('vvvv')
-    // })
-    // console.log('par------', promise)
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script type="module">
+      import MyPromise from '../MyPromise/MyPromise.js'
 
-    // promise.then(v => {
-    //   console.log('v------', v)
-    // })
-    // promise.then(v => {
-    //   console.log('v--||||----', v)
-    // })
+      const p1 = new MyPromise((resolve, reject) => {
+        console.log('q1')
+        reject(1)
+      })
 
-    // function LazyMan(val) {
-    //   this.queues = []
-    //   const queue = () => {
-    //     console.log('这是 ' + val)
-    //     this.next()
-    //   }
-    //   this.queues.push(queue)
+      const p2 = new MyPromise((resolve, reject) => {
+        console.log('q2')
+        setTimeout(() => {
+          reject(2)
+        }, 1000)
+      })
 
-    //   setTimeout(() => {
-    //     this.next()
-    //   })
+      const p3 = new MyPromise((resolve, reject) => {
+        console.log('q3')
+        setTimeout(() => {
+          reject(3)
+        }, 600)
+      })
 
-    //   return this
-    // }
+      const v = MyPromise.any([p1, p2, p3])
+        .then((v) => {
+          console.log('c---||||---', v)
+        })
+        .catch((v) => {
+          console.log('catch--1--', v)
+        }).finally(() => {
+          console.log('f-1--')
+        })
 
-    // LazyMan.prototype.next = function () {
-    //   console.log('next----', next)
-    //   // const queue = this.queues.shift()
-    //   // queue && queue()
-    // }
+      console.log('v----', v)
 
-    // LazyMan.prototype.eat = function (val) {
-    //   const queue = () => {
-    //     console.log('想吃 ' + val)
-    //     this.next()
-    //   }
-    //   this.queues.push(queue)
-    //   return this
-    // }
+      const t = Promise.any([p1, p2, p3]).then((v) => {
+        console.log('|||---', v)
+      }, e => {
+        console.log('e----', e)
+      })
 
-    // LazyMan('流了颗星').eat('哈密瓜')
+        console.log('t----', t)
 
-    // const Macinfo = function() {
-    //   function Macinfo(info) {
-    //     if(!(this instanceof Macinfo)) {
-    //       throw new TypeError("不允许直接使用")
-    //     }
+      // promise.then(v => {
+      //   console.log('v------', v)
+      // })
+      // promise.then(v => {
+      //   console.log('v--||||----', v)
+      // })
 
-    //     this.info = info
-    //   }
+      // function LazyMan(val) {
+      //   this.queues = []
+      //   const queue = () => {
+      //     console.log('这是 ' + val)
+      //     this.next()
+      //   }
+      //   this.queues.push(queue)
 
-    //   return Macinfo
-    // }()
+      //   setTimeout(() => {
+      //     this.next()
+      //   })
 
-    // console.log('Mac----', Macinfo('fhhfhf'))
+      //   return this
+      // }
 
-    // const m = new Macinfo('dddd')
-    // console.log('b----', m)
+      // LazyMan.prototype.next = function () {
+      //   console.log('next----', next)
+      //   // const queue = this.queues.shift()
+      //   // queue && queue()
+      // }
 
+      // LazyMan.prototype.eat = function (val) {
+      //   const queue = () => {
+      //     console.log('想吃 ' + val)
+      //     this.next()
+      //   }
+      //   this.queues.push(queue)
+      //   return this
+      // }
 
-    // function Msg(params) {
-    //   if(!(this instanceof Msg)) {
-    //     throw new TypeError("不允许直接使用")
-    //   }
-    //   this.info = params
-    // }
+      // LazyMan('流了颗星').eat('哈密瓜')
 
-    // console.log('mds-----', Msg('痛痛痛'))
+      // const Macinfo = function() {
+      //   function Macinfo(info) {
+      //     if(!(this instanceof Macinfo)) {
+      //       throw new TypeError("不允许直接使用")
+      //     }
 
-    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+      //     this.info = info
+      //   }
 
-    var Msg = function Msg() {
-      "use strict";
+      //   return Macinfo
+      // }()
 
-      _classCallCheck(this, Msg);
-    };
+      // console.log('Mac----', Macinfo('fhhfhf'))
 
-    console.log('Mag----', Msg.prototype.constructor === Msg)
+      // const m = new Macinfo('dddd')
+      // console.log('b----', m)
 
+      // function Msg(params) {
+      //   if(!(this instanceof Msg)) {
+      //     throw new TypeError("不允许直接使用")
+      //   }
+      //   this.info = params
+      // }
 
+      // console.log('mds-----', Msg('痛痛痛'))
 
-  </script>
-</body>
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError('Cannot call a class as a function')
+        }
+      }
+
+      var Msg = function Msg() {
+        'use strict'
+
+        _classCallCheck(this, Msg)
+      }
+
+      console.log('Mag----', Msg.prototype.constructor === Msg)
+    </script>
+  </body>
 </html>
