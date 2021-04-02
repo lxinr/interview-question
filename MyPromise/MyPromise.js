@@ -4,11 +4,6 @@
  * File Path: /MyPromise.js
  * File Created Date: 2021-04-02 14:22
  * Author: liux
- * -----
- * Last Modified: 2021-04-02 17:43
- * Modified By: liux
- * -----
- * HISTORY:
  */
 
 // https://malcolmyu.github.io/2015/06/12/Promises-A-Plus/#note-4
@@ -417,5 +412,3 @@ MyPromise.deferred = function () {
 }
 
 module.exports = MyPromise
-
-// export default MyPromise
