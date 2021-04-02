@@ -12,7 +12,6 @@
     "promises-aplus-tests": "^2.1.2"
   },
   "scripts": {
-    "test": "promises-aplus-tests T",
-    "testp": "promises-aplus-tests MyPromise"
+    "test": "promises-aplus-tests MyPromise"
   }
 }
