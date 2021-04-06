@@ -100,6 +100,8 @@
 
 [41. 箭头函数和普通函数的区别](https://github.com/lxinr/interview-question/issues/61)
 
+[42. 函数柯里化实现](https://github.com/lxinr/interview-question/issues/70)
+
 #### 浏览器及网络
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
