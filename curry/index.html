@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <title>柯里化实现</title>
+  </head>
+  <body>
+    <script type="module">
+      // 在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术
+      function test(a, b, c) {
+        console.log([a, b, c])
+      }
+      // const l = _.curry(test)
+      // l(2)(3)(4)
+      // l(5)(1, 3)
+
+      console.log('lodash----', )
+
+      function curry(fn, args = []) {
+        // 函数的形参个数
+        let len = fn.length
+        return (..._args) => {
+          _args = [...args, ..._args]
+          // 当得到的形参个数与原函数一致时，执行fn
+          if(_args.length === len) {
+            return fn(..._args)
+          } else {
+            // 否则再继续执行curry
+            return curry(fn, _args)
+          }
+        }
+      }
+
+      const curry2 = (fn, ...args) => args.length >= fn.length ? fn(...args) : curry2.bind(null, fn, ...args)
+
+      // function curry2(fn, ...args) {
+      //   console.log('args----', args)
+      //   return args.length >= fn.length ? fn(...args) : curry2.bind(null, fn, ...args)
+      // }
+
+      // const add = sum => {
+      //   const fn = n => add(n + sum)
+      //   fn.valueOf = () => sum
+      //   return fn
+      // }
+
+      function add2(...args1) {
+        const argsSum1 = args1.reduce((a, c) => a + c)
+        let fn = (...args2) => add2(argsSum1 + args2.reduce((a, c) => a + c))
+        fn.valueOf = () => argsSum1
+        return fn
+      }
+
+      console.log('44444----', +add2(1, 2)(6, 0)(1))
+
+      var q = add2(1, 2)(6, 0)(1)
+
+      console.log('add---||||-', q, q.valueOf())
+      
+      const c = curry2(test)
+      c(4)(5)(6)
+      c(5)(1, 3)
+    </script>
+  </body>
+</html>
