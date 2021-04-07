@@ -146,6 +146,8 @@
 
 [3. 大数相加](https://github.com/lxinr/interview-question/issues/71)
 
+[4. 实现千位分隔符](https://github.com/lxinr/interview-question/issues/72)
+
 #### Vue
 
 [1. vue中父子组件的加载顺序](https://github.com/lxinr/interview-question/issues/59)
