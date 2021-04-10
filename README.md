@@ -126,6 +126,8 @@
 
 [4. 组件设计原则](https://github.com/lxinr/interview-question/issues/69)
 
+[5. webpack热更新流程](https://github.com/lxinr/interview-question/issues/73)
+
 #### 前端安全
 
 [1. 简述前端安全](https://github.com/lxinr/interview-question/issues/54)
