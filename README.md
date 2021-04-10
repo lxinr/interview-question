@@ -116,6 +116,8 @@
 
 [6. HTTP1.1 如何解决 HTTP 的队头阻塞问题](https://github.com/lxinr/interview-question/issues/66)
 
+[7. 出现307状态的原因及处理方式](https://github.com/lxinr/interview-question/issues/74)
+
 #### 前端工程化
 
 [1. webpack中plugin和loader的区别](https://github.com/lxinr/interview-question/issues/21)
