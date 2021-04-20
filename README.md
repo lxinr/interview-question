@@ -152,6 +152,8 @@
 
 [4. 实现千位分隔符](https://github.com/lxinr/interview-question/issues/72)
 
+[5. 回文数判断](https://github.com/lxinr/interview-question/issues/75)
+
 #### Vue
 
 [1. vue中父子组件的加载顺序](https://github.com/lxinr/interview-question/issues/59)
