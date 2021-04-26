@@ -102,6 +102,8 @@
 
 [42. 函数柯里化实现](https://github.com/lxinr/interview-question/issues/70)
 
+[43. 常见的继承方式的实现](https://github.com/lxinr/interview-question/issues/79)
+
 #### 浏览器及网络
 
 [1. 简述UDP、TCP的异同点](https://github.com/lxinr/interview-question/issues/5)
@@ -144,7 +146,7 @@
 
 [2. LRU算法实现](https://github.com/lxinr/interview-question/issues/76)
 
-[3. Leetcode#69 x 的平方根](https://github.com/lxinr/interview-question/issues/78)
+[3. Leetcode#69 x的平方根](https://github.com/lxinr/interview-question/issues/78)
 
 #### 编程题
 
