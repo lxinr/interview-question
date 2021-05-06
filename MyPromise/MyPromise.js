@@ -287,7 +287,7 @@ const MyPromise = (() => {
 						}
           }, reason => {
 						executeCounter++
-						result[i] = { status: REJECTED, reason }
+						result[i] = { status: REJECTED, value: reason }
 						if(executeCounter === promiseCount) {
 							resolve(result)
 						}

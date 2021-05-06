@@ -140,3 +140,89 @@ const c = new Child({ name: '六六六' })
 console.log('c----', c.info) // name is 六六六，age is 20
 
 export default 'dsds'
+
+// function red() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('红灯亮~~~')
+//       resolve(yellow)
+//     }, 3000)
+//   })
+// }
+
+// function yellow() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('黄灯亮~~~')
+//       resolve(green)
+//     }, 1000)
+//   })
+// }
+
+// function green() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('黄灯亮~~~')
+//       resolve(red)
+//     }, 1000)
+//   })
+// }
+
+Promise.resolve(1).then(v => {
+  console.log('v- ----', v)
+  return 4
+}).then(q => {
+  console.log('q2------', q)
+})
+
+Promise.resolve(1).then(v => {
+  console.log('v- ----', v)
+  throw v
+}).then(q => {
+  console.log('q2------', q)
+}, e => {
+  console.log('e----', e)
+})
+
+function Msg() {
+  this.v = 'ddd'
+}
+
+var msg = new Msg()
+
+console.log('d-----', msg instanceof Msg)
+
+fn1()
+
+console.log(1)
+
+function fn1() {
+  console.log(2)
+  setTimeout(() => {
+    console.log(3)
+  }, 0)
+}
+
+new Promise((resolve) => {
+  console.log(4)
+  setTimeout(() => {
+    console.log(5)
+    resolve()
+  }, 100)
+}).then(() => {
+  setTimeout(() => {
+    console.log(10)
+  }, 10)
+  console.log(6)
+})
+
+Promise.resolve().then(() => {
+  console.log(7)
+  setTimeout(() => {
+    console.log(8)
+  })
+})
+
+setTimeout(() => {
+  console.log(9)
+}, 2)

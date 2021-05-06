@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大数运算</title>
+  </head>
+  <body>
+    <script type="module">
+      class BigNumber {
+        constructor() {
+
+        }
+
+        static add(n1, n2) {
+          let s1 = `${n1}`
+          let s2 = `${n2}`
+          // 获取两个数字的最大长度，来对其数字
+          const maxLen = Math.max(s1.length, s2.length)
+          // 在左侧空位补充0
+          // 如12322849, 68915 => 12322849 00068915
+          s1 = s1.padStart(maxLen, 0)
+          s2 = s2.padStart(maxLen, 0)
+
+          // 进位
+          let binary = 0
+          let sum = ''
+          for(let i = maxLen - 1; i >= 0; i--) {
+            let t = parseInt(s1[i]) + parseInt(s2[i]) + binary
+            binary = Math.floor(t/10)
+            sum = `${t%10}${sum}`
+            // 当第一位需要进位时，需在sum前加上进位
+            if(!i && binary) sum = `${binary}${sum}`
+            console.log('sum----', sum) // 1243575099254740990
+          }
+          return sum
+        }
+
+        static plus(...args) {
+          // 获取最大长度，来进行补零操作
+          const maxLen = Math.max(...args.map(v => v.length))
+          // 进位
+          let binary = 0
+          let sum = ''
+          for(let i = maxLen - 1; i >= 0; i--) {
+            // 补零操作
+            // 累加
+            let t = args.map(v => v.padStart(maxLen, 0)).reduce((acc, cur) => acc + parseInt(cur[i]), 0) + binary
+            binary = Math.floor(t/10)
+            sum = `${t%10}${sum}`
+            // 当第一位需要进位时，需在sum前加上进位
+            if(!i && binary) sum = `${binary}${sum}`
+          }
+          return sum
+        }
+      }
+
+      console.log('add---', BigNumber.add('9007199254740991', '9876543219999999'))
+      console.log('plus---', BigNumber.plus('9007199254740991', '1234567899999999999', '89768908333333333'))
+    </script>
+  </body>
+</html>

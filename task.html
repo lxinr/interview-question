@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      const tasks = [
+        {
+          name: 'task1',
+          time: 1,
+          dependency: '',
+        },
+        {
+          name: 'task2',
+          time: 2,
+          dependency: '',
+        },
+        {
+          name: 'task3',
+          time: 3,
+          dependency: 'task4',
+        },
+        {
+          name: 'task4',
+          time: 7,
+          dependency: 'task1',
+        },
+        {
+          name: 'task5',
+          time: 5,
+          dependency: 'task2',
+        },
+        {
+          name: 'task6',
+          time: 3,
+          dependency: 'task5',
+        }
+      ]
+
+      function getTimes(tasks = []) {
+        if(!tasks.length) return 0
+        var maxTime = 0
+        var len = tasks.length
+
+        var dependences = []
+
+        function fn(target, time = 0, map = new Map()) {
+          if(!target.dependency) return time + target.time || 0
+          if(map.has(target.dependency)) return map.get(target.dependency) + time
+          var obj = {}
+          for(var i = 0; i < len; i++) {
+            if(tasks[i].name === target.dependency) {
+              console.log(target)
+              obj = tasks[i]
+              break;
+            }
+          }
+          var t = target.time + time
+          map.set(target.dependency, t)
+          return fn(obj, t, map)
+        }
+
+        for(var i = 0; i < len; i++) {
+          const item = tasks[i]
+          if(!item.dependency) {
+            if(item.time > maxTime) maxTime = item.time
+          } else {
+            var t = fn(item)
+            if(t > maxTime) maxTime = t
+          }
+        }
+
+        console.log('maxTime----', maxTime)
+
+        return maxTime
+
+      }
+
+      getTimes(tasks)
+
+      // class Fo {
+      //   constructor() {
+      //     this.v = '哈哈哈'
+      //   }
+
+      //   static info () {
+      //     return this.name
+      //   }
+      // }
+
+      // var f = new Fo()
+      // Fo.info()
+
+      function Foo(params) {
+        
+      }
+
+      Foo.info = function () {
+        console.log('ths----', this)
+        return this.name
+      }
+
+      Foo.info()
+    </script>
+  </body>
+</html>

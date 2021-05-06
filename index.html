@@ -109,5 +109,20 @@
 
   console.log('urlParse----', urlParse('https://www.xx.com?c=23232&e=523423'))
 
+  function thousandSep(num){
+    return num.toString().replace(/\d+/, n => { // 先提取整数部分
+      return n.replace(/(\d)(?=(\d{3})+$)/g, $1 => `${$1},`)
+    })
+  }
+
+    console.log('thousandSep----', 
+      thousandSep(123456789) === '123,456,789',
+      thousandSep(12345678) === '12,345,678',
+      thousandSep(1234567) === '1,234,567',
+      thousandSep(1234) === '1,234',
+      thousandSep(1234567.12) === '1,234,567.12',
+      thousandSep(123456789.6789) === '123,456,789.6789'
+    )
+
 </script>
 </html>

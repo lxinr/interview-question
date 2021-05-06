@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div id="key">p----</div>
+  </div>
+</body>
+<script type="module">
+  window.onload = function () {
+    const appTarget = document.getElementById('key')
+    // 观察器的配置（需要观察什么变动）
+    const config = { attributes: true, childList: true, subtree: true };
+    const observer = new MutationObserver((list, ob) => {
+      console.log('list----', list)
+    })
+    observer.observe(appTarget, config)
+  }
+  function eventLoop() {
+    setTimeout(function () {
+        console.log(1);
+    });
+
+    new Promise(function(resolve,reject){
+        console.log(2)
+        Promise.resolve().then(() => {
+          console.log(4)
+          return Promise.resolve(5)
+        }).then(v => {
+          console.log(v)
+        })
+        resolve(3)
+    }).then(function(val){
+        console.log(val);
+    }).then(() => {
+      console.log(6)
+    }).then(() => {
+      console.log(7)
+    }).then(() => {
+      console.log(8)
+    })
+  }
+
+  // eventLoop()
+
+  function pro() {
+    new Promise((resolve, reject) => {
+      throw new Error('error')
+    }).then(() => {
+      console.log('then-1---')
+    }).catch(() => {
+      console.log('catch-1---')
+    }).then(() => {
+      console.log('then-2---')
+    }).catch(() => {
+      console.log('catch-2---')
+    })
+  }
+
+  // pro()
+
+  function testTask(len = 300) {
+    console.log('js---start---')
+    setTimeout(() => {
+      console.log('settimeout----')
+    }, 0)
+    Promise.resolve().then(() => {
+      console.log('promise-1--')
+    }).then(() => {
+      console.log('promise-2--')
+    }).then(() => {
+      console.log('promise-3--')
+    }).then(() => {
+      const keyTarget = document.getElementById('key')
+      keyTarget.innerHTML = '<h4>promise-4--</h4>'
+      console.log('promise-4--')
+    })
+
+    new Promise((resolve) => {
+      console.log('promise----')
+      resolve(Promise.resolve(4))
+    }).then(() => {
+      console.log('new Promise--1--')
+    }).then(() => {
+      console.log('new Promise--2--')
+    })
+
+    for(let i = 0; i < len; i++) {
+      Promise.resolve().then(() => {
+        console.log('for----i----', i)
+      })
+    }
+    console.log('js----end---')
+  }
+
+  testTask()
+
+</script>
+</html>

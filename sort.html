@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>排序算法</title>
+  </head>
+  <body>
+    <script type="module">
+      function random(min, max) {
+        return Math.round(Math.random() * (max - min)) + min;
+      }
+
+      function getRandomRange(min = 1, max = 100, count = 100) {
+        return Array.from({ length: count }, () => random(min, max))
+      }
+
+      console.log('getNumberInNormalDistribution----', getRandomRange(1, 200, 20))
+
+      // const sourceData = [2, 9, 0, 31, 16, 12, 16, 8, 17, 53, 42, 28, 1, 33]
+      const sourceData = getRandomRange(1, 8000, 2000)
+      // 升序排列
+      console.log(
+        'sort----',
+        sourceData.slice().sort((m, n) => m - n),
+        bubbleSort(sourceData.slice()),
+        selectSort(sourceData.slice()),
+        insertSort1(sourceData.slice()),
+        insertSort2(sourceData.slice())
+      )
+
+      // , sourceData, selectSort(sourceData.slice()), insertSort(sourceData.slice())
+
+      /**
+       * 冒泡排序
+       *
+       * 比较相邻的元素。如果第一个比第二个大，就交换它们两个；
+       * 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；
+       * 针对所有的元素重复以上的步骤，除了最后一个；
+       * 重复步骤1~3，直到排序完成
+       *
+       * 冒泡排序：即每次遍历，都会将剩余数组中最大的值放在数组的最后面或者最前面，使用的是交换的方式
+       */
+      function bubbleSort(array = []) {
+        if (array.length <= 1) return array
+        console.time('bubbleSort')
+        for (var i = 0; i < array.length; i++) {
+          // 简单优化，判断是否有交换，如果没有交换，则说明排序完成，即可跳出循环，减少循环次数
+          var isExchange = false
+          // array.length - i - 1 -> 相邻比较，就会把较大的数放在数组的后面，这样每次遍历次数就需要减1
+          for (var j = 0; j < array.length - i - 1; j++) {
+            // 相邻元素判断，假如左边元素大于右边元素，则需要将两者交换
+            if (array[j] > array[j + 1]) {
+              ;[array[j], array[j + 1]] = [array[j + 1], array[j]]
+              isExchange = true
+            }
+          }
+          if (!isExchange) break
+        }
+        console.timeEnd('bubbleSort')
+        return array
+      }
+
+      /**
+       * 选择排序
+       *
+       * 第一遍，从数组中选出最小的，与第一个元素进行比较，如果比第一个元素小则交换；
+       * 第二遍，从第二个元素开始，找出最小的，与第二个元素进行比较，如果比第二个元素小则交换；依次循环，完成排序
+       */
+      function selectSort(array = []) {
+        if (array.length <= 1) return array
+        console.time('selectSort')
+        // array.length - 1 -> 最后一个元素不需要比较大小
+        for (var i = 0; i < array.length - 1; i++) {
+          // 指针index每次判断都以当前值的下标为默认开始
+          var index = i
+          // var j = i + 1 -> 从当前值的下一个值开始判断
+          for (var j = i + 1; j < array.length; j++) {
+            // 如果当前元素大于判断的值，则将指针index指向较小值的下标
+            if (array[index] > array[j]) {
+              index = j
+            }
+          }
+          // 遍历完成，将当前元素与剩余数组中较小值的下标index交换
+          ;[array[i], array[index]] = [array[index], array[i]]
+        }
+        console.timeEnd('selectSort')
+        return array
+      }
+
+      /**
+       * 插入排序
+       *
+       * 第一个元素i被认为是已排序
+       * 取下一个元素i + 1，在已排序的元素序列中从后往前扫描
+       * 如果其中新元素i + 1小于已排序元素序列中的某一个元素，该元素则往后退一位
+       * 一直找，直到找到已排序元素中小于或等于新元素的位置k
+       * 将新元素放置在k + 1
+       * 重复
+       */
+      function insertSort1(array = []) {
+        if (array.length <= 1) return array
+        console.time('insertSort1')
+        for (var i = 1; i < array.length; i++) {
+          var k = -1
+          var item = array[i]
+          // 从后往前扫描已排序的元素数组
+          for (var j = i - 1; j >= 0; j--) {
+            // 如果发现已排序的元素中存在小于等于当前元素的，则保存元素的位置k，并退出遍历
+            // 如果已排序元素中没有小于等于当前元素item的，则表示item为此时的最大值
+            if (array[j] <= item) {
+              k = j
+              break
+            }
+          }
+          array.splice(i, 1)
+          array.splice(k + 1, 0, item)
+        }
+        console.timeEnd('insertSort1')
+        return array
+      }
+
+      function insertSort2(array) {
+        console.time('insertSort2')
+        for (var i = 1; i < array.length; i++) {
+          var key = array[i]
+          var j = i - 1
+          while (j >= 0 && array[j] > key) {
+            array[j + 1] = array[j]
+            j--
+            // console.log(array)
+            // debugger
+          }
+          array[j + 1] = key
+        }
+        console.timeEnd('insertSort2')
+        return array
+      }
+
+      /**
+       * 希尔排序
+       * 
+       */
+    </script>
+  </body>
+</html>

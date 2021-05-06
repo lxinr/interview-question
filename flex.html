@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      --bg: #333;
+    }
+    .container {
+    margin:10px;
+    display: flex;
+    width: 600px;
+    height: 200px;
+    background-color: #f5f6f8;
+    color: #666;
+    text-align: center;
+    position: relative;
+
+}
+
+.container .tip, .container-test1 .tip {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #333;
+}
+.item {
+    height: 100px;
+}
+.item p {
+  margin: 0;
+}
+.a{
+    /* flex: 100px; */
+    /* width: 100px; */
+    background-color:#ff4466;
+    /* flex-grow: 1;
+    flex-basis: 100px; */
+    flex: 1 100px;
+}
+.b{
+    /* flex: 150px; */
+    /* width: 150px; */
+    background-color:#42b983;
+    /* flex-grow: 1;
+    flex-basis: 150px; */
+    flex: 1 150px;
+}
+.c{
+  /* flex: 100px; */
+    /* width: 100px; */
+    background-color:#61dafb;
+    /* flex-grow: 1;
+    flex-basis: 100px; */
+    flex: 1 100px;
+}
+
+.wrap1 {
+  display: flex;
+  /* width: 600px; */
+  height: 300px;
+  background-color: #eee;
+}
+
+.wrap1 .left {
+  flex: 1 2 300px;
+  background-color: red;
+}
+
+.wrap1 .right {
+  flex: 2 1 300px;
+  background-color: blue;
+}
+
+.flex-container {
+  width: auto;
+  display: flex;
+  background: #ccc;
+  margin-bottom: 20px;
+}
+
+.flex-container.row {
+  flex-direction: row;
+}
+
+.flex-container.row .ai {
+  order: 2;
+}
+.flex-container.row .bi {
+  order: 1;
+}
+.flex-container.row .ci {
+  order: 3;
+}
+.flex-container.row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-container.column {
+  height: 500px;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-container.column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-container .item {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.container-test1 {
+  margin:10px;
+  display: flex;
+  width: 600px;
+  height: 200px;
+  background-color: #f5f6f8;
+  color: #666;
+  text-align: center;
+  position: relative;
+}
+
+.container-test1 .a1 {
+  flex: 1;
+}
+.container-test1 .b1 {
+  flex: 1;
+}
+.container-test1 .c1 {
+  flex: 1;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="tip">width: 500</p>
+    <div class="item a">
+      <p>A</p>
+      <p> width:300 - 37.5</p>
+    </div>
+    <div class="item b">
+      <p>B</p>
+      <p> width:150 - 37.5</p>
+    </div>
+    <div class="item c">
+      <p>C</p>
+      <p> width:200 - 75</p>
+    </div>
+  </div>
+  <div class="wrap1">
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+  </div>
+  <div class="flex-container row">
+    <div class="ai item">a</div>
+    <div class="bi item">b</div>
+    <div class="ci item">c</div>
+  </div>
+  <div class="flex-container row-reverse">
+    <div class="ai item">a</div>
+    <div class="bi item">b</div>
+    <div class="ci item">c</div>
+  </div>
+  <div class="flex-container column">
+    <div class="ai item">a</div>
+    <div class="bi item">b</div>
+    <div class="ci item">c</div>
+  </div>
+  <div class="flex-container column-reverse">
+    <div class="ai item">a</div>
+    <div class="bi item">b</div>
+    <div class="ci item">c</div>
+  </div>
+
+  <div class="center-wrap">
+    <div class="box"></div>
+  </div>
+  <div class="container-test1">
+    <p class="tip">width: 500</p>
+    <div class="item a1">
+      <p>A</p>
+      <p> width:300 - 37.5</p>
+    </div>
+    <div class="item b1">
+      <p>B</p>
+      <p> width:150 - 37.5</p>
+    </div>
+    <div class="item c1">
+      <p>C</p>
+      <p> width:200 - 75</p>
+    </div>
+  </div>
+</body>
+</html>
