@@ -148,7 +148,7 @@
 
 [3. Leetcode#69 x的平方根](https://github.com/lxinr/interview-question/issues/78)
 
-[4. Leetcode#204 计数质数](https://github.com/lxinr/interview-question/issues/79)
+[4. Leetcode#204 计数质数](https://github.com/lxinr/interview-question/issues/80)
 
 #### 编程题
 
