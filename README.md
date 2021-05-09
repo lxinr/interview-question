@@ -148,6 +148,8 @@
 
 [3. Leetcode#69 x的平方根](https://github.com/lxinr/interview-question/issues/78)
 
+[4. Leetcode#204 计数质数](https://github.com/lxinr/interview-question/issues/79)
+
 #### 编程题
 
 [1. 经典面试题: 实现一个LazyMan](https://github.com/lxinr/interview-question/issues/58)
